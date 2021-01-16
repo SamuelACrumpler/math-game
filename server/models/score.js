@@ -1,10 +1,10 @@
 var mongoose = require('mongoose');
 
 var scoreSchema = new mongoose.Schema({
-	bid: Number,
+	gid: String,
 	name : String,
     score: Number,
-	words:  Number,
+	timer:  Number,
 
 });
 
