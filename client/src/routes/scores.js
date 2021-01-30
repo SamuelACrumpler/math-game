@@ -247,7 +247,7 @@ class score extends Component {
                 } else {
                     console.log("sort timer")
                     r.sort(function (a,b){ //resort
-                        return b.timer - a.timer;
+                        return a.timer - b.timer;
                     });
                     for(var i = 0; i < r.length; i++){
                         r[i].score = "----";

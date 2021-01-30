@@ -135,7 +135,6 @@ class main extends Component {
         localStorage.setItem("max", this.state.max);
 
         this.props.history.push("/game");
-
     }
 
 
@@ -148,7 +147,6 @@ render() {
                     </div>
 				</div>
                 <div className="row col mb-3 m-0 p-0">
-
                     
                     <div className="col-12 text-center">
                         <h1>Math Game</h1>
@@ -156,11 +154,13 @@ render() {
 
                 </div>
                 <div className="text-center">
-                    <p>A simple math game. The player chooses the operations they want to practice with. For example clicking on addition and subtraction would only produce addition and subtraction problems.
+                    <p>A simple math game. The player chooses the operations they want to practice with, or do their multiplication tables. <br/><br/>All high score tables are based on the options and ranges selected.</p>
+                    <hr/>
+                    <p> For example clicking on addition and subtraction would only produce addition and subtraction problems.
                     Solutions for the problems can go into the negative values, and the game will avoid dividing by zero. If the number would result in a decimal value, it will be rounded up to the second decimal point.
                     The player would have a total of 60 seconds to score as high as they can. The high scores will be stored based on the operations the player selects and the number range.    
-                        <br /> <br />The multiplication table option will go through all possible problems from the start of the number range, to the end of it. For example if the number range is set at 1 to 12, the first problem will be 1x1, the last will be 12x12.
-                        On the multiplication table there will be 5 seconds added for each problem, also the scoreboard will be entirely localized </p>
+                        <br /> <br />The multiplication table option will go through all possible problems from the start of the number range, to the end of it. 
+                        For example if the number range is set at 1 to 12, the first problem will be 1x1, the last will be 12x12. Clear the problems as fast as possible!</p>
                 </div>
                 <div className="row col mb-3 m-0 p-0">
                     <div className="col-12 text-center">
@@ -178,24 +178,18 @@ render() {
 
                 </div>
                 <div className="row col mb-3 m-0 p-0">
-
                     
                     <div className="col-12 text-center">
                         
-                    <button id="btn4" class="btn btn-primary ml-1 mr-1 disabled" onClick={() => this.enableOperation(4)}>Multiplication Tables</button>
+                      <button id="btn4" class="btn btn-primary ml-1 mr-1 disabled" onClick={() => this.enableOperation(4)}>Multiplication Tables</button>
 
                     </div>
 
                 </div>
                 <div className="row col mb-3 m-0 p-0">
-
                     
                     <div className="col-12 text-center">
                     <h3>Number Range</h3>
-                    <p></p>
-                        
-                    
-
                     </div>
 
                     <div className="col-md-6">
@@ -217,10 +211,6 @@ render() {
                         <input value={this.state.max} name="max"  onInput={this.onInput}  class="form-control" placeholder="" aria-label="To" aria-describedby="basic-addon2"/>
                         </div>
                     </div>
-
-                   
-
-                    
 
                 </div>
                 <div id="error" className="alert alert-danger text-center d-none">
