@@ -25,10 +25,10 @@ router.get('/count', function (req, res, next) {
 });
 
 //get count of entries in the collection
-router.get('/count/:bid', function (req, res, next) {
-	console.log("Running Count bid");
+router.get('/count/:gid', function (req, res, next) {
+	console.log("Running Count gid: " + req.params.gid);
 
-	score.where(req.params.bid).countDocuments(function (err, count) {
+	score.countDocuments({gid: req.params.gid},function (err, count) {
 		if (err) return next(err);
 		res.json(count);
 	});
@@ -36,10 +36,21 @@ router.get('/count/:bid', function (req, res, next) {
 	
 });
 
-/* Get user by username*/
-router.get('/board/:bid', async function (req, res, next) {
+// router.get('/count/:gid', function (req, res, next) {
+// 	console.log("Running Count gid: " + req.params.gid);
 
-	score.find({ bid : req.params.bid }, function (err, post) {
+// 	score.where(req.params.gid).countDocuments(function (err, count) {
+// 		if (err) return next(err);
+// 		res.json(count);
+// 	});
+
+	
+// });
+
+/* Get user by username*/
+router.get('/board/:gid', async function (req, res, next) {
+
+	score.find({ gid : req.params.gid }, function (err, post) {
 		if (err) return next(err);
 		res.json(post);
 	});

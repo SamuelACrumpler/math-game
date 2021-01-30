@@ -2,3 +2,7 @@ html, body, #root {
     margin: 0;
     height: 100%;
 }
+
+.main {
+    background-image: url(../css/old_mathematics.png);
+}
